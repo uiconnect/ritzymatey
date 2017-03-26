@@ -5,12 +5,45 @@ var express  = require("express");
 var path     = require('path');
 
 
+
+
+
+var ftpClient = require('ftp-client'),
+    config = {
+        host: 'southernrockseafood.com.my',
+        //port: 8443,
+        user: 'kellyonehub',
+        password: '0neHubke11y*'
+    },
+    options = {
+        logging: 'basic'
+    },
+    client = new ftpClient(config, options);
+ 
+client.connect(function () {
+ console.log("-----------------------------")
+    client.upload(['./util/**'], '/httpdocs/test/pages', {
+        //baseDir: 'test',
+        overwrite: 'older'
+    }, function (result) {
+        console.log(result);
+    });
+ 	
+
+    client.download('/httpdocs/test/pages', './util', {
+        overwrite: 'all'
+    }, function (result) {
+        console.log(result);
+    });
+ 
+});
+
+
 //var csrf = require('csurf');  
 //var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser');
 
-//var connStr = 'mongodb://xcvsdf:lkjmnb@ds059516.mlab.com:59516/mani-portfolio';
-var connStr = process.env.MONGODB_URI || 'mongodb://heroku_zzlcz1ds:a1jpvqhb3jlbujdak88qv2v69s@ds057806.mlab.com:57806/heroku_zzlcz1ds'
+var connStr = 'mongodb://xcvsdf:lkjmnb@ds059516.mlab.com:59516/mani-portfolio';
 mongoose.connect(connStr, function(err) {
     if (err) throw err;
     console.log('Successfully connected to MongoDB');
@@ -40,3 +73,11 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.listen(process.env.PORT || 5000, function () {
   console.log('Example app listening on port 5000!');
 });
+
+
+
+
+
+
+
+
