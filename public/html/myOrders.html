@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+	<meta charset="UTF-8">
+	<title>RitzyMatey: My Orders</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<meta name="description" content="" />
+	<meta name="abstract" content="" />
+	<meta name="keywords" content="" />
+	<meta name="generator" content="" />
+	<link rel="canonical" href="" />
+	<link rel="shortlink" href="" />	
+	<!-- Bootstrap 3.3.4 -->
+	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<!-- Font Awesome Icons -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<!-- Select2: plugin for select box styling -->
+	<link href="../plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
+	<!-- Theme style -->
+	<link href="../dist/css/rm.css" rel="stylesheet" type="text/css" />
+	<!-- Select2 style -->	
+	<link href="../dist/css/select2.css" rel="stylesheet" type="text/css" />	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+<body class="container-fluid" id="checkout">
+<div class="row" style="margin:0;">
+	<div class="col-sm-2" style="padding:30px 25px; padding-bottom:0; background-color:#fff;">
+		<a href="#" onClick="opened('cross'); closed('burger'); opened('menu');"><i class="fa fa-navicon" id="burger" style="font-size:22px; color:#333;"></i>
+		<a href="#" onClick="closed('menu'); closed('cross'); opened('burger');"><i class="fa fa-close" id="cross" style="font-size:22px; color:#333; display:none;"></i>
+	</div>
+	<div class="col-xs-8 text-center" style="padding:0px; padding-bottom:0; background-color:#fff;">
+		<a href="home1.html"><img src="../dist/img/logo.png"></a>
+	</div>
+	<div class="col-sm-2 text-right" style="padding:30px 25px; padding-bottom:0; background-color:#fff;">
+		<i class="fa fa-shopping-bag" style="font-size:22px; color:#333;"></i>&nbsp;0<i class="fa fa-user-o" style="font-size:22px; color:#333; margin-left:15px;"></i>
+	</div>
+</div>
+<div class="row" style="margin-top:25px;">
+	<div class="col-xs-2">
+		<div class="row">
+			<div class="col-xs-12" id="menu" style="display:none; margin-top:60px;">
+			<ul id="topHeaderMenu">
+				<li><a href="catalogue.html">All</a></li>
+			</ul>
+			<h5 class="decorated"><span><i class="fa fa-star-o"></i></span></h5>
+			<ul id="topHeaderMenu1">
+				<li><a href="#">Buttoned-up Office</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Creative Office</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Office Staples</a></li>
+			</ul>
+			<h5 class="decorated"><span><i class="fa fa-shirtsinbulk"></i></span></h5>
+			<ul id="topHeaderMenu2">
+				<li><a href="#">Tops</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Skirts</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Dresses</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Trousers</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Scarfs</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Jackets & Coats</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Cardigans</a></li>
+			</ul>
+			<h5 class="decorated"><span><i class="fa fa-tags"></i></span></h5>
+			<ul id="topHeaderMenu3">
+				<li><a href="#">On Sale</a></li>
+			</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-8 section">
+		<div class="row" style="margin:0;">
+			<div class="col-sm-12 section-promo">
+				<h4 class="text-center" style="margin:20px;">My Orders</h4>
+				<div class="row shadow1" style="margin:0;border:1px solid #ddd;">
+					<div class="col-sm-12" style="padding:0;">
+						<div>
+							<table class="table" style="padding:0; margin:0;">
+								<thead style="background-color:#fafafa;">
+									<tr>
+										<td class="tableHeader" style="width:20%;">Order #</td>
+										<td class="tableHeader" style="width:35%">Item</td>
+										<td class="tableHeader text-center" style="width:20%">Status</td>
+										<td class="tableHeader text-right" style="width:10%">Units</td>
+										<td class="tableHeader text-right" style="width:10%">Price (<i class="fa fa-inr"></i>)</td>
+										<td style="width:10%;"></td>
+									</tr>
+								</thead>
+								<tr>
+									<td>PSB170201-2</td>
+									<td>2 Tops</td>
+									<td class="text-center">In Progress</td>
+									<td class="text-right">2</td>
+									<td class="text-right">12,873</td>
+									<td><a href="#" onClick="opened('item1'); opened('close-icon1'); closed('open-icon1');" id="open-icon1"><i class="fa fa-eye"></i></a></td>
+								</tr>
+								<tr id="item1" style="display:none;">
+									<td colspan="6" style="padding:6px; background-color:#efefef;">
+										<table class="table">
+										<tr>
+											<td style="width:20%;"><img src="../dist/img/thumb_8e.jpg" class="pull-left" style="width:100%;"></td>
+											<td style="width:35%;">
+												GENESIS VEST, PERLA BLOUSE, SOHO TRACK PANT AND VIOLETTA SANDALS<br>
+												<div class="title" style="color:#aaa;">Creative Office | MPA30R-9193</div>
+												<div class="title" style="color:#aaa;">Size: XL, Color: Orange</div>
+											</td>
+											<td class="text-center" style="width:20%;">
+												Delivered<br>
+												<h6 style="font-weight:300;"><a href="#">Not happy?<br>Request Return.</a></h6>
+											</td>
+											<td class="text-right" style="width:10%;">1</td>
+											<td class="text-right" style="width:10%;">10,323</td>
+											<td class="text-center" style="width:10%;"></td>
+										</tr>
+										<tr>
+											<td><img src="../dist/img/thumb_9e.jpg" style="width:100%;"></td>
+											<td>
+												GENESIS VEST, PERLA BLOUSE, SOHO TRACK PANT AND VIOLETTA SANDALS<br>
+												<div class="title" style="color:#aaa;">Creative Office | MPA30R-9195</div>
+												<div class="title" style="color:#aaa;">Size: L, Color: Sea Green</div>
+											</td>
+											<td class="text-center">
+												In Progress<br>
+												<h6 style="font-weight:300;"><a href="#">Changed mind?<br>Request Cancel.</a></h6>
+											</td>
+											<td class="text-right">1</td>
+											<td class="text-right">2,050</td>
+											<td class="text-center" style="width:10%;"></td>
+										</tr>
+										<tr>
+											<td colspan="3" class="text-right">Subtotal (A)</td>
+											<td class="units text-right">3</td>
+											<td class="price text-right">12,373</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td colspan="3" class="text-right">Shipping Charges (B)</td>
+											<td class="units text-right"></td>
+											<td class="price text-right">500</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td colspan="3" class="text-right"><b>Total Payable (A + B)</b></td>
+											<td class="units text-right"><b>3</b></td>
+											<td class="price text-right"><b>12,873</b></td>
+											<td></td>
+										</tr>
+										</table>
+										<div class="row" style="padding:15px;">
+											<div class="col-xs-4"></div>
+											<div class="col-xs-4">
+												<button class="btn" onClick="closed('item1'); closed('close-icon1'); opened('open-icon1');" id="close-icon1" >Close</button>
+											</div>
+											<div class="col-xs-4"></div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>PSB170115-9</td>
+									<td>1 Tops + 1 Trouser</td>
+									<td class="text-center">Delivered</td>
+									<td class="text-right">2</td>
+									<td class="text-right">12,873</td>
+									<td><a href="#" onClick="opened('item1'); opened('close-icon1'); closed('open-icon1');" id="open-icon1"><i class="fa fa-eye"></i></a><a href="#" onClick="closed('item1'); closed('close-icon1'); opened('open-icon1');" id="close-icon1" style="display:none;"><i class="fa fa-close"></a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-1 catalogue-l"></div>
+</div>
+<div class="row footer" style="margin:0; margin-top:70px; background-color:#fafafa; ">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-8" style="padding:20px;">
+		<div class="row" style="border-bottom:1px solid #ccc;">
+			<div class="col-sm-12 text-right" style="padding:10px;">
+				Track Order | Delivery | Returns | Gift Cards | FAQs
+			</div>
+		</div>
+		<div class="row" style="border-bottom:0px solid #ccc;">
+			<div class="col-sm-12 text-left" style="padding:10px;">
+				Our Story | Press | Career | Affiliate Program | Contacts
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center" style="padding:10px; margin:0; font-size:12px;">
+				&copy; 2017 AniKene (OPC) Pvt. Ltd. | All rights reserved.
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-2"></div>
+</div>
+
+<!-- jQuery 2.1.4 -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+<!-- Bootstrap 3.3.2 JS -->
+<script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- Select2: plugin for styling select boxes -->
+<script src="../plugins/select2/select2.full.min.js" type="text/javascript"></script>
+<script src="../dist/js/rm.js"></script>
+<script>
+	('#check2').change(function() {
+	  if ($(this).is('.checked')) {
+	    alert('Checked');
+	  } else {
+	    alert('Unchecked');
+	  }
+	});
+</script>
+</body>
+</html>
+<!-- Modal -->
+<div class="modal fade" id="orderUpdate" tabindex="-1" role="dialog" aria-labelledby="orderUpdate">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="border-radius:0;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="myModalLabel"><i class="fa fa-shopping-basket"></i>&nbsp;&nbsp;There is 1 item now in your Shopping Bag</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+			<thead>
+				<tr>
+					<td class="tableHeader">#</td>
+					<td></td>
+					<td class="tableHeader" style="width:40%">Item</td>
+					<td class="tableHeader text-right">Units</td>
+					<td class="tableHeader text-right">Price (<i class="fa fa-inr"></i>)</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><img src="../dist/img/img-1s.jpg" class=""></td>
+					<td>
+						GENESIS VEST, PERLA BLOUSE, SOHO TRACK PANT AND VIOLETTA SANDALS<br>
+						<div class="title" style="color:#aaa;">Professional Wear | Style code: MPA30R-9193</div>
+						<div class="title" style="color:#aaa;">Size: XL, Color: Bedge</div>
+					</td>
+					<td class="units">1</td>
+					<td class="text-right">10,323</td>
+					<td><i class="fa fa-trash"></i></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="text-right">Total</td>
+					<td class="units">1</td>
+					<td class="price">10,323</td>
+					<td></i></td>
+				</tr>
+			</tbody>
+		</table>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+			<div class="col-xs-5" style="padding:5px 10px;">
+				<button type="button" class="btn btn-addtoCart" data-dismiss="modal" onClick="parentRefresh('product.html');">Continue Shopping</button>
+			</div>
+			<div class="col-xs-7" style="padding:5px 10px;">
+				<button type="button" class="btn addtoCart" onClick="parentRefresh('checkout.html');">Checkout</button>
+			</div>
+      </div>
+    </div>
+  </div>
+</div>

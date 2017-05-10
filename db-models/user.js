@@ -7,7 +7,7 @@ var mongoose         = require('mongoose'),
 var userSchema = new Schema({
     username : {
                     type     : String,
-                    required : true, 
+                    required : true,
                     index    : { unique: true } ,
                     min      : 5,
                     max      : 10
@@ -15,7 +15,7 @@ var userSchema = new Schema({
     password : {
                     type     : String,
                     min      : 5,
-                    required : true, 
+                    required : true,
                     max      : 10
     },
     cid        : util.dbValidation.strReqUniq,
@@ -28,10 +28,11 @@ var userSchema = new Schema({
     address1   : util.dbValidation.strReq,
     address2   : util.dbValidation.strReq,
     address3   : util.dbValidation.str,
+    location   : util.dbValidation.str,
     pin        : util.dbValidation.str,
     email      : {
                     type     : String,
-                    required : true, 
+                    required : true,
                     index    : { unique: true } ,
                     min      : 5,
                     max      : 40

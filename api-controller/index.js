@@ -1,23 +1,15 @@
 // This page has to be removed if it grows or complex
 var user         = require('./user'),
 login            = user.login,
-register         = user.register,
 forgetPassword   = user.forgetPassword,
 forgetUsername   = user.forgetUsername,
 forgorCred       = user.forgorCred,
-installerLogin   = require('./installer').installerLogin,
 AccessLogger     = require("./AccessLogger"),
 jwt              = require('jsonwebtoken'),
 tableControllers = {
-	"requirement"  : require('./requirement'),
-	"assessment"   : require('./assessment'),
-	"company"      : require('./company'),
-	"feedback"     : require('./feedback'),
-	"installer"    : require('./installer'),
-	"installation" : require('./installation'),
 	"user"         : require('./user'),
-	"location"     : require('./location'),
-	"referral"     : require('./referral')
+	//"order"        : require('./order'),
+	"product"      : require('./product'),
 };
 
 var accesses;
@@ -28,17 +20,15 @@ var Routes = {
 	init: function(apiRoutes,app) {
 		//this.restrictAccessBySameIp(apiRoutes,app);
 		this.initPreloginRoutes(apiRoutes);
-		this.authendicateFilter(apiRoutes,app);
+		//this.authendicateFilter(apiRoutes,app); //TO be removed
 		this.initPostloginRoutes(apiRoutes);
 	},
 	initPreloginRoutes: function(apiRoutes) {
-		apiRoutes.post('/register', register);
 		apiRoutes.post('/login', login);
 		apiRoutes.post('/login', login);
 		apiRoutes.post('/forgot-password', forgetPassword);
 		apiRoutes.post('/forgot-credentials', forgorCred);
 		apiRoutes.post('/forgot-username', forgetUsername);
-		apiRoutes.post('/login-installer', installerLogin);
 	},
 	initPostloginRoutes: function(apiRoutes) {
 
@@ -56,16 +46,16 @@ var Routes = {
 	restrictAccessBySameIp: function (apiRoutes,app) {
 
 		apiRoutes.use(function(req, res, next) {
-			
-			var ip = req.headers['x-forwarded-for'] || 
-						req.connection.remoteAddress || 
+
+			var ip = req.headers['x-forwarded-for'] ||
+						req.connection.remoteAddress ||
 						req.socket.remoteAddress ||
 						req.connection.socket.remoteAddress;
 
 		    /*if (!accesses.check(ip)) {
 		        // cancel the request here
-		        res.status(500).send({ 
-			        error: "You do not have access" 
+		        res.status(500).send({
+			        error: "You do not have access"
 			    });
 		    } else {
 		        next();
@@ -83,12 +73,12 @@ var Routes = {
 		  if (token) {
 
 		    // verifies secret and checks exp
-		    jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
+		    jwt.verify(token, app.get('superSecret'), function(err, decoded) {
 		      if (err) {
-		        return res.json({ success: false, message: 'Failed to authenticate token.' });    
+		        return res.json({ success: false, message: 'Failed to authenticate token.' });
 		      } else {
 		        // if everything is good, save to request for use in other routes
-		        req.decoded = decoded;    
+		        req.decoded = decoded;
 		        next();
 		      }
 		    });
@@ -97,12 +87,12 @@ var Routes = {
 
 		    // if there is no token
 		    // return an error
-		    return res.status(403).send({ 
-		        success: false, 
+		    return res.status(403).send({
+		        success: false,
 		        status:403,
-		        message: 'No auth infermation provided.' 
+		        message: 'No auth infermation provided.'
 		    });
-		    
+
 		  }
 		});
 	}
