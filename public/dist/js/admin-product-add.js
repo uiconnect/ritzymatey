@@ -152,3 +152,21 @@ function onCancel(){
 
   document.location.href='product-list.html';
 }
+
+
+$.ajax({
+  url:"/api/category/all",
+  type:"POST",
+  data:{},
+  success: function (d) {
+    if(!d[0]) return 0;
+    for(var i in d[0].categories){
+      var elm = d[0].categories[i];
+      $("#category").append("<option>"+ elm.name +"</option>")
+    }
+    $('.dropdown-toggle').dropdown()
+  },
+  error: function (d) {
+    errorNotification(d.error);
+  }
+})

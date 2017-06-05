@@ -10,6 +10,7 @@ tableControllers = {
 	"user"         : require('./user'),
 	//"order"        : require('./order'),
 	"product"      : require('./product'),
+	"category"     : require('./category'),
 };
 
 var accesses;
@@ -36,6 +37,7 @@ var Routes = {
 			var ctrl = tableControllers[item];
 			apiRoutes.post  ('/'+ item ,               ctrl.add);
 			apiRoutes.post  ('/'+ item +'/all',        ctrl.getAll); // it should be get but for safty purpose its addede as post
+			ctrl.getByQuery && apiRoutes.post  ('/'+ item +'/query',      ctrl.getByQuery); // it should be get but for safty purpose its addede as post
 			apiRoutes.post  ('/'+ item +'/:id',        ctrl.getById); // it should be get but for safty purpose its addede as post
 			apiRoutes.put   ('/'+ item +'/:id',        ctrl.putById);
 			apiRoutes.patch ('/'+ item +'/:id',        ctrl.putById);

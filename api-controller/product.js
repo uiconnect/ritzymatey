@@ -13,6 +13,11 @@ var Controller = {
             return util.apiResp(req,res,e,record)
         });
     },
+    getByQuery: function(req, res) {
+        Schema.find( req.body, function(e, records) {
+            return util.apiResp(req,res,e,records)
+        });
+    },
     getAll: function(req, res) {
         /*if(req.decoded._doc.role.toLowerCase() === "user"){
             Schema.find({username:req.decoded._doc.username}, function(e, records) {

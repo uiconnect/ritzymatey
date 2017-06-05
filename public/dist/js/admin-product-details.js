@@ -5,6 +5,8 @@ $.ajax({
   success: function (d) {
     $("#prodTitle").html(d.name+" ("+d.prodId+") / "+ d.category +" / "+ d.clothingType)
     $("#prodName").html(d.name)
+    $("#prodDesc").html(d.description)
+    $("#prodDetails").html(d.details)
     $("#prodId").html(d.prodId)
     $("#category").html(d.category)
     $("#clothingType").html(d.clothingType)
@@ -12,6 +14,7 @@ $.ajax({
     $("#sizeAvailability").html(d.sizeAvailability.join(", "))
     $("#dateOfAbilityFrom").html(d.dateOfAbilityFrom)
     $("#dateOfAbilityTo").html(d.dateOfAbilityTo)
+    $("#keyWords").html(d.keyWords.join(", "))
 
     var inr = d.pricing.filter(function(a){return a.CurrencyType == "INR"})[0];
     $("#inrMRP").html(inr.mrp)

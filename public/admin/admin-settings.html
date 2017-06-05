@@ -11,7 +11,7 @@
 	<meta name="keywords" content="" />
 	<meta name="generator" content="" />
 	<link rel="canonical" href="" />
-	<link rel="shortlink" href="" />	
+	<link rel="shortlink" href="" />
 	<!-- Bootstrap 3.3.4 -->
 	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
 	<!-- Font Awesome Icons -->
@@ -20,9 +20,9 @@
 	<link href="../plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
 	<!-- Theme style -->
 	<link href="../dist/css/admin.css" rel="stylesheet" type="text/css" />
-	<link href="../dist/css/triangle.css" rel="stylesheet" type="text/css" />	
-	<!-- Select2 style -->	
-	<link href="../dist/css/select2.css" rel="stylesheet" type="text/css" />	
+	<link href="../dist/css/triangle.css" rel="stylesheet" type="text/css" />
+	<!-- Select2 style -->
+	<link href="../dist/css/select2.css" rel="stylesheet" type="text/css" />
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,45 +66,23 @@
 		</div> -->
 	</div>
 </div>
-<div class="row action-bar">
-	<div class="col-xs-12 text-right">
-		<a href="settings-edit.html"><i class="fa fa-pencil icon-section"></i>Edit</a>
-	</div>
-</div>
 <div class="row">
 	<div class="col-xs-12 page">
 		<div class="row" style="padding-bottom:20px; border-bottom:0px solid #aaa;">
 			<div class="col-xs-12">
 				<div class="section-title"><i class="fa fa-shirtsinbulk icon-section"></i>Product Categories</div>
-					<table class="table table-hover">
+          <button id="addCategory" >Add Category</button>
+          <table class="table table-hover">
 					<thead>
 						<tr>
-							<th style="width:15px;">#</th>
-							<th style="width:100px;">Banner Img</th>
+							<th style="width:100px;">Image</th>
 							<th style="width:400px;">Name</th>
-							<th class="text-center">Description</th>
+              <th class="text-center">Description</th>
+							<th class="text-center">Remove</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td class="text-right">1</td>
-							<td><img src="../dist/img/20.jpg" class="img-thumb"></td>
-							<td>Buttoned-up Office Wear</td>
-							<td>Get the signature look with these styles by us. Exclusive for you.</td>
-						</tr>
-						<tr>
-							<td class="text-right">2</td>
-							<td><img src="../dist/img/8.jpg" class="img-thumb"></td>
-							<td>Creative Office</td>
-							<td>Get the office look that's creative and speaks of what you are.</td>
-						</tr>
-						<tr>
-							<td class="text-right">3</td>
-							<td><img src="../dist/img/img-blank.png" class="img-thumb"></td>
-							<td>Office Staples</td>
-							<td>
-							</td>
-						</tr>
+					<tbody id="categoryList">
+
 					</tbody>
 				</table>
 			</div>
@@ -129,43 +107,48 @@
 							<td>Within India</td>
 							<td>1 INR (<i class="fa fa-inr"></i>)</td>
 							<td class="text-center">-</td>
-							<td class="text-center">1.00</td>
-							<td class="text-center">1.00</td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
 						</tr>
 						<tr>
 							<td class="text-right">2</td>
-							<td>N. America & ROW</td>							
+							<td>N. America & ROW</td>
 							<td>1 USD (<i class="fa fa-usd"></i>)</td>
-							<td class="text-center">64.00</td>
-							<td class="text-center">1.00</td>
-							<td class="text-center">1.00</td>
+							<td class="text-center"><input type="text" value="64.59" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
 						</tr>
 						<tr>
 							<td class="text-right">3</td>
 							<td>Europian Union</td>
 							<td>1 EURO (<i class="fa fa-euro"></i>)</td>
-							<td class="text-center">64.00</td>
-							<td class="text-center">1.00</td>
-							<td class="text-center">1.00</td>
+							<td class="text-center"><input type="text" value="69.22" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
 						</tr>
 						<tr>
 							<td class="text-right">4</td>
 							<td>Singapore</td>
 							<td>1 SGD</td>
-							<td class="text-center">64.00</td>
-							<td class="text-center">1.00</td>
-							<td class="text-center">1.00</td>
+							<td class="text-center"><input type="text" value="53.10" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
 						</tr>
 						<tr>
 							<td class="text-right">5</td>
 							<td>Australia</td>
 							<td>1 AUD</td>
-							<td class="text-center">64.00</td>
-							<td class="text-center">1.00</td>
-							<td class="text-center">1.00</td>
+							<td class="text-center"><input type="text" value="32.08" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
+							<td class="text-center"><input type="text" value="1.00" class="form-control text-right"></td>
 						</tr>
 					</tbody>
 				</table>
+			</div>
+		</div>
+        <div class="row" style="padding:20px;">
+			<div class="col-xs-12 text-center" style="padding:5px 10px;">
+				<button type="button" id="save" class="btn addtoCart" onClick="">Save</button>
 			</div>
 		</div>
 	</div>
@@ -177,6 +160,12 @@
 <!-- Select2: plugin for styling select boxes -->
 <script src="../plugins/select2/select2.full.min.js" type="text/javascript"></script>
 <script src="../dist/js/rm.js"></script>
+<script src="../dist/js/common.js"></script>
+<script src="../dist/js/admin-settings.js"></script>
+<script>
+$('.dropdown-toggle').dropdown()
+</script>
+
 <script>
 $('.dropdown-toggle').dropdown()
 </script>
