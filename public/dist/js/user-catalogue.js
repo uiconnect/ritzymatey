@@ -46,14 +46,14 @@ function constructProductList(list) {
   for(var i in list){
     var item = list[i];
     var elm = [
-      '<div class="col-md-6 col-sm-6 col-xs-12 column" style="width:300px" >',
+      '<div class="col-md-6 col-sm-6 col-xs-12 column">',
         '<div class="box box-r">',
           '<div class="title">'+ item.name +'</div>',
           '<div class="cardy cusGuideSlider">',
-            '<div class="front"> <a href="#"><img width="300px" id="cat-img-1m" src="'+ getDefaultImg(item.img) +'" class="img-m" alt=""></a>',
+            '<div class="front"> <a href="#"><img id="cat-img-1m" src="'+ getDefaultImg(item.img) +'" class="img-m" alt=""></a>',
               '<div class="price-tag" style="right:0;"><span> INR '+ getPriceByCurrency(item.pricing,'INR') +'</span></div>',
             '</div>',
-            '<div class="back"> <a href="#"><img width="300px" id="cat-img-1m" src="'+ getDefaultImg(item.img) +'" class="img-m" alt=""></a>',
+            '<div class="back"> <a href="#"><img id="cat-img-1m" src="'+ getDefaultImg(item.img) +'" class="img-m" alt=""></a>',
              '<div class="price-tag" style="right:0;"><span>INR '+ getPriceByCurrency(item.pricing,'INR') +'</span></div>',
             '</div>',
           '</div>',
